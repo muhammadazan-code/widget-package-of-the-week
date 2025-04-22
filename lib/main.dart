@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widget_of_the_week/packages/persistent_bottom_nav_bar.dart';
 import 'package:widget_of_the_week/widgets/tab_bar.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: TabBarWidget(),
+      home: PersistentBottomNavBarExample(),
     );
   }
 }
