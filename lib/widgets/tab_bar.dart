@@ -36,8 +36,6 @@ class _TabBarWidgetState extends State<TabBarWidget> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.blueAccent,
-          foregroundColor: Colors.white,
           title: Text("Tab Bar Widget"),
           // Step 3: There is a property in AppBar is bottom which we assign the Tab Bar widget.
           bottom: TabBar(tabs: tabs),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_of_the_week/packages/persistent_bottom_nav_bar.dart';
-import 'package:widget_of_the_week/widgets/tab_bar.dart';
+import 'package:widget_of_the_week/packages/image_picker.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: PersistentBottomNavBarExample(),
+      theme: ThemeData(
+          appBarTheme: AppBarTheme(
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.white,
+      )),
+      home: ImagePickerPackageExample(),
     );
   }
 }

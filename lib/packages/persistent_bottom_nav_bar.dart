@@ -53,8 +53,6 @@ class PersistentBottomNavBarExample extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Persistent Bottom Nav Bar Package"),
-        backgroundColor: Colors.blueAccent,
-        foregroundColor: Colors.white,
       ),
       body: PersistentTabView(
         context,
