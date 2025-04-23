@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_of_the_week/packages/image_picker.dart';
+import 'package:widget_of_the_week/packages/animated_text_kit.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
       )),
-      home: ImagePickerPackageExample(),
+      home: AnimatedTextKitExample()
     );
   }
 }
