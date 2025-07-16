@@ -39,17 +39,26 @@ dependencies:
   persistent_bottom_nav_bar: ^6.2.1
   animated_text_kit: ^4.2.3
   responsive_framework: ^1.5.1
+  flutter_rating: ^2.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_native_splash: ^2.4.6
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+flutter_native_splash:
+  background_image: assets/images/first_image.png
+  color: "#5DCCFC"
+
+  android_12:
+    image: assets/images/first_image.png
+    image_dark: assets/images/first_image.png
+
+    color: "#5DCCFC"
+
+  web: true
+  android: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -62,8 +71,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

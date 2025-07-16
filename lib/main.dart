@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:widget_of_the_week/packages/responsiveness.dart';
-import 'package:widget_of_the_week/screens/dekstop_screen.dart';
-import 'package:widget_of_the_week/screens/mobile_screen.dart';
-import 'package:responsive_framework/responsive_framework.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,25 +14,51 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        builder: (context, widget) => ResponsiveBreakpoints.builder(
-              child: widget!,
-              breakpoints: [
-                const Breakpoint(start: 0, end: 450, name: "M O B I L E"),
-                const Breakpoint(start: 451, end: 800, name: "Tablet"),
-                const Breakpoint(start: 801, end: 1920, name: "D E S K T O P"),
-                const Breakpoint(
-                    start: 1921, end: double.infinity, name: "4 K"),
-              ],
-            ),
-        theme: ThemeData(
-            primarySwatch: Colors.lightBlue,
-            appBarTheme: AppBarTheme(
-              backgroundColor: Colors.blueAccent,
-              foregroundColor: Colors.white,
-            )),
-        home: ResponsivenessLayout(
-          mobileBody: MobileScreen(),
-          desktopBody: DekstopScreen(),
-        ));
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    initialization();
+  }
+
+  void initialization() async {
+    // This is where you can initialize the resources needed by your app while
+    // the splash screen is displayed.  Remove the following example because
+    // delaying the user experience is a bad design practice!
+    // ignore_for_file: avoid_print
+    print('ready in 3...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('ready in 2...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('ready in 1...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('go!');
+    FlutterNativeSplash.remove();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Center(
+            child: Text(
+          "Hello world",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        )),
+      ),
+    );
   }
 }
