@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_of_the_week/widgets/data_table/data_table.dart';
+import 'package:widget_of_the_week/packages/data/data_table_2_package.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DataTableScreen(),
+      home: DataTableTwoExample(),
     );
   }
 }
